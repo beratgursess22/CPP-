@@ -3,49 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: igurses < igurses@student.42istanbul.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:30:12 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/08 14:06:37 by igurses          ###   ########.fr       */
+/*   Updated: 2025/10/09 12:18:09 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-bool safeGetline(const std::string& prompt, std::string& input) {
+bool safeGetline(const std::string& prompt, std::string& input) 
+{
     std::cout << prompt;
     if (!std::getline(std::cin, input))
         return false;
     return true;
 }
 
-void controlSignal() {
+void controlSignal()
+{
     if (std::cin.eof()) {
         std::cout << "\nEnd of input detected. Exiting the application." << std::endl;
         exit(0);
     }
 }
 
+std::string getValidInput(const std::string& prompt) 
+{
+    std::string input;
+    
+    while (true) 
+    {
+        if (safeGetline(prompt, input) == false)
+            controlSignal();
+        if (!input.empty())
+            break;
+        std::cout << "Lütfen boş geçmeyin!" << std::endl;
+    }
+    return input;
+}
+
 void takeInput(PhoneBook& phoneBook)
 {
     Contact newContact;
-    std::string input;
 
-    if (safeGetline("Enter First Name: ", input) == false)
-        controlSignal();
-    newContact.setFirstName(input);         
-    if (safeGetline("Enter Last Name: ", input) == false)
-        controlSignal();
-    newContact.setLastName(input); 
-    if (safeGetline("Enter Nick Name: ", input) == false)
-        controlSignal();
-    newContact.setNickName(input);
-    if (safeGetline("Enter Phone Number: ", input) == false)
-        controlSignal();
-    newContact.setPhoneNumber(input);
-    if (safeGetline("Enter Darkest Secret: ", input) == false)
-        controlSignal();
-    newContact.setDarkestSecret(input);
+    newContact.setFirstName(getValidInput("Enter First Name: "));
+    newContact.setLastName(getValidInput("Enter Last Name: "));
+    newContact.setNickName(getValidInput("Enter Nick Name: "));
+    newContact.setPhoneNumber(getValidInput("Enter Phone Number: "));
+    newContact.setDarkestSecret(getValidInput("Enter Darkest Secret: "));
+
     phoneBook.addContact(newContact);
 }
 
@@ -74,5 +81,6 @@ int main()
         else
             std::cout << "Invalid command. Please try again." << std::endl;
     }
+    phoneBook.getContactCount();
     return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: igurses < igurses@student.42istanbul.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:13:05 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/08 13:28:54 by igurses          ###   ########.fr       */
+/*   Updated: 2025/10/09 12:22:57 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,12 @@ void PhoneBook::addContact(const Contact& newContact)
         }
         this->contacts[7] = newContact;
     }
+    std::cout << "Contact added successfully!" << std::endl;
+}
+
+int PhoneBook::getContactCount() const
+{
+    std::cout << "Current contact count: " << this->contactCount << std::endl;
+    return this->contactCount; 
 }
 
