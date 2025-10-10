@@ -6,7 +6,7 @@
 /*   By: igurses < igurses@student.42istanbul.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:30:12 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/09 12:18:09 by igurses          ###   ########.fr       */
+/*   Updated: 2025/10/10 22:12:33 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,10 @@ int main()
         }
         else if(command == "ADD")
             takeInput(phoneBook);
-        // else if(command == "SEARCH")
-        // {
-        //     phoneBook.displayContacts();
-        // }
+        else if(command == "SEARCH")
+            phoneBook.display();
         else
             std::cout << "Invalid command. Please try again." << std::endl;
     }
-    phoneBook.getContactCount();
     return 0;
 }

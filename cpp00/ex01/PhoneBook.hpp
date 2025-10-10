@@ -15,9 +15,8 @@ class PhoneBook
         ~PhoneBook();
 
         void addContact(const Contact& newContact);
-        void displayContacts() const;
-        const Contact* getContacts() const;
-        int getContactCount() const;
+        void display() const;
+        void getContactIndex() const;
 };
 
 #endif
