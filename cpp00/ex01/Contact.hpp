@@ -2,7 +2,6 @@
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-
 #include <string>
 #include <iostream>
 
@@ -17,7 +16,7 @@ class Contact {
         Contact();
         ~Contact();
 
-        void setFirstName(const std::string& firstName);//adress kullanırsan kopyasını oluşturmaz, var ola stringi kullanır.
+        void setFirstName(const std::string& firstName);
         void setLastName(const std::string& lastName);
         void setNickName(const std::string& nickName);
         void setPhoneNumber(const std::string& phoneNumber);
