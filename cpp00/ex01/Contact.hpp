@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+
 class Contact {
     private:
         std::string firstName;

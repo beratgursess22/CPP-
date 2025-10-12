@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igurses < igurses@student.42istanbul.co    +#+  +:+       +#+        */
+/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:13:05 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/10 22:13:00 by igurses          ###   ########.fr       */
+/*   Updated: 2025/10/12 13:22:34 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <cstdlib>
 
 PhoneBook::PhoneBook()
 {
@@ -105,7 +106,7 @@ void PhoneBook::getContactIndex() const
             i++;
         }
         if (validIndex)
-            index = std::stoi(indexStr);
+            index = std::atoi(indexStr.c_str());
     }
     if (!validIndex)
     {

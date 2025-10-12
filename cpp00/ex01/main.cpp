@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igurses < igurses@student.42istanbul.co    +#+  +:+       +#+        */
+/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:30:12 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/10 22:25:31 by igurses          ###   ########.fr       */
+/*   Updated: 2025/10/12 13:20:26 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ bool safeGetline(const std::string& prompt, std::string& input)
 
 void controlSignal()
 {
-    if (std::cin.eof()) {
+    if (std::cin.eof()) 
+    {
         std::cout << "\nEnd of input detected. Exiting the application." << std::endl;
         exit(0);
     }
@@ -60,6 +61,8 @@ int main()
 {
     PhoneBook phoneBook;
     std::string command;
+
+
 
     std::cout << "Welcome to the PhoneBook application!" << std::endl;
     while (1)
