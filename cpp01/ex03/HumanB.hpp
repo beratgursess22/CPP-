@@ -1,12 +1,18 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 17:43:55 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/12 17:43:56 by igurses          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
+#include "Weapon.hpp"
+
+class HumanB
+{
+    private:
+        std::string name;
+        Weapon* weapon;
+    public:
+        HumanB(std::string name);
+        ~HumanB();
+        void setWeapon(Weapon& weapon);
+        void attack() const;
+};
+
+#endif
