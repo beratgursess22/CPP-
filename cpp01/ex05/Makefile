@@ -1,4 +1,4 @@
-SRC = main.cpp Convert.cpp Write.cpp Read.cpp Change.cpp
+SRC = main.cpp Harl.cpp
 NAME = main
 CC = c++ -Wall -Wextra -Werror -std=c++98
 

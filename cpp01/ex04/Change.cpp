@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Change.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 12:49:11 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/15 13:41:17 by igurses          ###   ########.fr       */
+/*   Created: 2025/10/15 13:28:21 by igurses           #+#    #+#             */
+/*   Updated: 2025/10/15 13:45:44 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-int main(int argc, char **argv)
+void convert(std::string content, std::string from, std::string to)
 {
-    Convert conv;
+    size_t pos;
+    pos = 0;
 
-    if (argc != 4)
+    while ((pos = content.find(from, pos)) != std::string::npos)
     {
-        std::cout << "Usage: ./convert <filename> <from> <to>" << std::endl;
-        return (1);
+        content.erase(pos, from.length());
+        content.insert(pos, to);
+        pos += to.length();
     }
-    else
-    {
-        conv.setFilename(argv[1]);
-        conv.setFrom(argv[2]);
-        conv.setTo(argv[3]);
-        readFile(conv);  
-    }
-    return (0);
+    writeFile(content);
 }

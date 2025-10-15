@@ -5,28 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 12:49:11 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/15 13:41:17 by igurses          ###   ########.fr       */
+/*   Created: 2025/10/15 14:00:24 by igurses           #+#    #+#             */
+/*   Updated: 2025/10/15 14:33:48 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "Harl.hpp"
 
 int main(int argc, char **argv)
 {
-    Convert conv;
+    Harl harl;
+    std::string level;
 
-    if (argc != 4)
+    level = argv[1];
+    if (argc != 2)
     {
-        std::cout << "Usage: ./convert <filename> <from> <to>" << std::endl;
-        return (1);
+        std::cout << "Usage: ./harlFilter <level>" << std::endl;
+        return(1);
     }
-    else
+    if (level != "DEBUG" && level != "INFO" && level != "WARNING" && level != "ERROR")
     {
-        conv.setFilename(argv[1]);
-        conv.setFrom(argv[2]);
-        conv.setTo(argv[3]);
-        readFile(conv);  
+        std::cout << "Invalid level. Please use one of the following: DEBUG, INFO, WARNING, ERROR" << std::endl;
+        return(1);
     }
-    return (0);
+    harl.complain(level);
+    return 0;
 }

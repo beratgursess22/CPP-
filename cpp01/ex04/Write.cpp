@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Write.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 12:49:11 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/15 13:41:17 by igurses          ###   ########.fr       */
+/*   Created: 2025/10/15 12:51:32 by igurses           #+#    #+#             */
+/*   Updated: 2025/10/15 13:53:13 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-int main(int argc, char **argv)
+void writeFile(std::string content)
 {
-    Convert conv;
+    std::ofstream file("result.txt");
 
-    if (argc != 4)
+    if (!file.is_open())
     {
-        std::cout << "Usage: ./convert <filename> <from> <to>" << std::endl;
-        return (1);
+        std::cout << "Error: Could not open output.txt for writing" << std::endl;
+        return ;
     }
-    else
-    {
-        conv.setFilename(argv[1]);
-        conv.setFrom(argv[2]);
-        conv.setTo(argv[3]);
-        readFile(conv);  
-    }
-    return (0);
+    file << content;
+    file.close();
+    std::cout << "File written to output.txt" << std::endl;
 }
