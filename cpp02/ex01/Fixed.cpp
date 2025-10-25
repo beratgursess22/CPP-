@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: igurses < igurses@student.42istanbul.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 18:12:33 by igurses           #+#    #+#             */
-/*   Updated: 2025/10/25 18:51:30 by igurses          ###   ########.fr       */
+/*   Updated: 2025/10/26 00:07:40 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const
 {
-    return static_cast<float>(this->pointValue) / (1 << fractionalBits);
+    return (float)(this->pointValue) / (1 << fractionalBits);
 }
 int Fixed::toInt() const
 {
@@ -73,6 +73,5 @@ int Fixed::toInt() const
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
-    std::cout << "---------------------------------"<<std::endl;
     return out;
 }
