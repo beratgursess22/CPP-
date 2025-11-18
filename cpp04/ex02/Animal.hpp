@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 12:43:53 by igurses           #+#    #+#             */
-/*   Updated: 2025/11/18 20:48:24 by igurses          ###   ########.fr       */
+/*   Updated: 2025/11/18 21:11:17 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Animal
 
         void setType(std::string type);
         std::string getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const = 0;
 };
 
 #endif
