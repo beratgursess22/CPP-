@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 20:02:02 by igurses           #+#    #+#             */
-/*   Updated: 2025/11/18 20:02:34 by igurses          ###   ########.fr       */
+/*   Updated: 2025/11/19 11:15:20 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongCat::WrongCat()
 WrongCat::WrongCat(const WrongCat& other)
 {
 	std::cout << "WrongCat copy constructor called" << std::endl;
-	*this = other;
+	this->type = other.type;
 }
 WrongCat& WrongCat::operator=(const WrongCat& other)
 {

@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:37:05 by igurses           #+#    #+#             */
-/*   Updated: 2025/11/18 20:06:12 by igurses          ###   ########.fr       */
+/*   Updated: 2025/11/19 12:08:47 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,23 @@
 int main()
 {
     const Animal* meta = new Animal();
+    std::cout << "---------------------" << std::endl;
     const Animal* j = new Dog();
+    std::cout << "---------------------" << std::endl;
     const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    std::cout << "---------------------" << std::endl;
+    const Animal a =  Cat();
+    std::cout << "---------------------" << std::endl;
+    const Animal b = Animal();
+    std::cout << "---------------------" << std::endl;  
+    std::cout << "------Animal Test-----" << std::endl;
+    std::cout << "---------------------" << std::endl;
+    std::cout <<"Dog Adrress: "<< &j << " "<< j->getType()<< std::endl;
+    std::cout <<"Cat Adress : "<< &i << " "<< i->getType() << std::endl;
+    std::cout <<"Animal Adrress : "<< &meta << " "<< meta->getType() << std::endl;
+    std::cout << "Animal A Type : " <<&a << " " <<a.getType() << std::endl;
+    a.makeSound();
+    i->makeSound();
     j->makeSound();
     meta->makeSound();
     delete meta;
@@ -40,6 +52,10 @@ int main()
     wrongMeta->makeSound();
     delete wrongMeta;
     delete wrongI;
+    std::cout << "---------------------" << std::endl;
+    std::cout << "---------------------" << std::endl;
+    std::cout << "---------------------" << std::endl;
+
 
 
     return 0;

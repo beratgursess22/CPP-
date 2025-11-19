@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:42:00 by igurses           #+#    #+#             */
-/*   Updated: 2025/11/18 20:24:01 by igurses          ###   ########.fr       */
+/*   Updated: 2025/11/19 11:14:10 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Dog::Dog()
 {
-    this->type = "Dog";
     std::cout<<"Dog's Constructor worked"<<std::endl;
+    this->type = "Dog";
 }
 
 Dog::Dog(const Dog &dog)

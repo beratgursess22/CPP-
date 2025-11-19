@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 12:56:37 by igurses           #+#    #+#             */
-/*   Updated: 2025/11/15 16:49:18 by igurses          ###   ########.fr       */
+/*   Updated: 2025/11/19 11:13:27 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 Animal::Animal()
 {
     std::cout<<"Animal's Constructor worked"<<std::endl;
+    type = "Animal";
 }
 
 Animal::Animal(const Animal &other)
@@ -28,9 +29,7 @@ Animal& Animal::operator=(const Animal &other)
 {
     std::cout<<"Animal's Asissgment Constructor worked"<<std::endl;
     if (this != &other)
-    {
         this->type = other.type;
-    }
     return (*this);
 }
 
