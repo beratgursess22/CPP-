@@ -5,40 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 13:24:35 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 14:42:53 by igurses          ###   ########.fr       */
+/*   Created: 2026/01/19 17:14:55 by igurses           #+#    #+#             */
+/*   Updated: 2026/01/19 18:40:03 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 
-int main ()
+int main()
 {
     try 
     {
-        Bureaucrat b1("Alice", 2);
-        std::cout <<b1 << std::endl;
-        b1.incrementGrade();
-        Bureaucrat b2("Bob", 149);
-        std::cout << b2 << std::endl;
-        b2.decrementGrade();
-        std::cout << b2 << std::endl;
-        b1.incrementGrade();
-        std::cout << b1 << std::endl;
+        Form formA("Form A", 50, 30);
+        Bureaucrat bob("Bob", 55);
+        std::cout << bob;
+        std::cout << formA;
+        formA.singForm(bob);
+        std::cout << formA;
     }
-    catch (std::exception &e)
-    {
+    catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    try
-    {
-        Bureaucrat b3("Charlie", 0);
-        std::cout << b3 << std::endl;   
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
 }

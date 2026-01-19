@@ -1,6 +1,6 @@
-NAME = Bureaucrat.out
+NAME = Form.out
 CC = c++ -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Bureaucrat.cpp 
+SRC = main.cpp Bureaucrat.cpp Form.cpp 
 
 all: $(NAME)
 
