@@ -6,11 +6,12 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:58:48 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 18:40:21 by igurses          ###   ########.fr       */
+/*   Updated: 2026/01/19 23:06:33 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form(): name("Default Form"),isSigned(false), gradeToSign(150), gradeToExecute(150)
 {
@@ -64,23 +65,11 @@ int Form::getGradeToExecute() const
     return this->gradeToExecute;
 }
 
-bool Form::beSigned(const Bureaucrat &other)
+void Form::beSigned(const Bureaucrat &bureaucrat)
 {
-    if (other.getGrade() > this->gradeToSign)
-        this->isSigned = false;
-    else
-        this->isSigned = true;
-    return isSigned;
-}
-void Form::singForm(const Bureaucrat &other)
-{
-   if(beSigned(other) == true)
-       std::cout << other.getName() << " signed " << this->name << std::endl;
-   else
-   {
-       std::cout << other.getName() << " couldn't sign " << this->name << " because his grade is too low." << std::endl;
+    if (bureaucrat.getGrade() > this->gradeToSign)
         throw Form::GradeTooLowException();
-   }
+    this->isSigned = true;
 }
 
 const char* Form::GradeTooHighException::what() const throw()

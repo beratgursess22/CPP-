@@ -6,17 +6,17 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:42:05 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 18:22:35 by igurses          ###   ########.fr       */
+/*   Updated: 2026/01/19 23:06:31 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
-
 #include <iostream>
-#include <string>   
-#include "Bureaucrat.hpp"
+#include <string>
+
+class Bureaucrat;
 
 class Form
 {
@@ -42,8 +42,7 @@ class Form
             public:
                 virtual const char* what() const throw();
         };
-        bool beSigned(const Bureaucrat &other);
-        void singForm(const Bureaucrat &other);
+        void beSigned(const Bureaucrat &bureaucrat);
         const std::string &getName() const;
         bool getIsSigned() const;
         int getGradeToSign() const;
