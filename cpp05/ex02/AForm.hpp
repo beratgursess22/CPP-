@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 12:51:26 by igurses           #+#    #+#             */
+/*   Updated: 2026/01/20 13:26:18 by igurses          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
 #include <iostream>
 #include <string>
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
