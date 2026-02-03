@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 14:54:08 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/20 14:55:47 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/03 13:30:19 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 
+class AForm;
 
-class Intern 
+class Intern
 {
     public:
         Intern();

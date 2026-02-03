@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 14:47:53 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/20 14:47:54 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/03 13:34:40 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class AForm
         AForm(const std::string &name, int gradeToSign, int gradeToExecute);  
         AForm(const AForm &other);
         AForm &operator=(const AForm &other);
-        ~AForm();
+        virtual ~AForm();
         
         class GradeTooHighException : public std::exception
         {
