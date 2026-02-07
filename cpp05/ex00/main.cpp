@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 13:24:35 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 14:42:53 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:03:32 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@ int main ()
         Bureaucrat b1("Alice", 2);
         std::cout <<b1 << std::endl;
         b1.incrementGrade();
+        std::cout << b1 << std::endl;
         Bureaucrat b2("Bob", 149);
         std::cout << b2 << std::endl;
         b2.decrementGrade();
         std::cout << b2 << std::endl;
-        b1.incrementGrade();
-        std::cout << b1 << std::endl;
     }
     catch (std::exception &e)
     {
@@ -33,7 +32,8 @@ int main ()
     }
     try
     {
-        Bureaucrat b3("Charlie", 0);
+        Bureaucrat b3("Charlie", 1);
+        b3.incrementGrade();
         std::cout << b3 << std::endl;   
     }
     catch(const std::exception& e)

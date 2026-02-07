@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:31 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/20 14:08:09 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:24:26 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Bureaucrat
         void incrementGrade();
         void decrementGrade();
         void signForm(AForm &form);
+        void executeForm(const AForm &form) const;
 
         class GradeTooHighException : public std::exception
         {

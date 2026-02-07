@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 14:54:10 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/03 13:29:03 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 19:33:22 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Intern::~Intern()
 
 AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
 {
-    std::string formNames[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+    std::string formNames[3] = {"Shrubbery CreationForm", "Robotomy RequestForm", "Presidential PardonForm"};
     int index = -1;
     for (int i = 0; i < 3; i++) 
     {

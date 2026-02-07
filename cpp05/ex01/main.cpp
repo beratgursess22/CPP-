@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 17:14:55 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 23:12:07 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:18:12 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ int main()
     catch (std::exception &e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
-
     return 0;
 }

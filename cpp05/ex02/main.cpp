@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:33 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/20 14:45:41 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:37:48 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,16 @@ int main()
         ShrubberyCreationForm ShrubberyCreationForm("home");
         RobotomyRequestForm RobotomyRequestForm("Bender");
         PresidentialPardonForm PresidentialPardonForm("Marvin");        
-        Bureaucrat bureaucrat("Bureaucrat", 30);
+        Bureaucrat bureaucrat("Bureaucrat", 40);
+        std::cout << std::endl;
         bureaucrat.signForm(ShrubberyCreationForm);
-        ShrubberyCreationForm.execute(bureaucrat);
+        bureaucrat.executeForm(ShrubberyCreationForm);
+        std::cout << std::endl;
         bureaucrat.signForm(RobotomyRequestForm);
-        RobotomyRequestForm.execute(bureaucrat);
+        bureaucrat.executeForm(RobotomyRequestForm);
+        std::cout << std::endl;
         bureaucrat.signForm(PresidentialPardonForm);
-        PresidentialPardonForm.execute(bureaucrat);
+        bureaucrat.executeForm(PresidentialPardonForm);
     }
     catch(const std::exception &e)
     {

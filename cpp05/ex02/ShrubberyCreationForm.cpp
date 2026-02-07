@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:51:46 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/20 14:15:35 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:40:41 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,30 @@ void ShrubberyCreationForm:: executeAction() const
         std::cerr << "Error creating file!" << std::endl;
         return;
     }
-    outfile << "              v .   ._, |_  .," << std::endl;
-    outfile << "           `-._\\/  .  \\ /    |/_" << std::endl;
-    outfile << "               \\\\  _\\, y | \\//" << std::endl;
-    outfile << "         _\\_.___\\\\, \\\\/ -.\\||" << std::endl;
-    outfile << "           `7-,--.`._||  / / ," << std::endl;
-    outfile << "           /'     `-. `./ / |/_.'" << std::endl;
-    outfile << "                     |    |//" << std::endl;
-    outfile << "                     |_    /|" << std::endl;
-    outfile << "                     |-   | |" << std::endl;
-    outfile << "                     |   =| |" << std::endl;
-    outfile << "                     |    | |" << std::endl;
-    outfile << "--------------------/ ,  . \\--------._" << std::endl;
-
+    // outfile << "              v .   ._, |_  .," << std::endl;
+    // outfile << "           `-._\\/  .  \\ /    |/_" << std::endl;
+    // outfile << "               \\\\  _\\, y | \\//" << std::endl;
+    // outfile << "         _\\_.___\\\\, \\\\/ -.\\||" << std::endl;
+    // outfile << "           `7-,--.`._||  / / ," << std::endl;
+    // outfile << "           /'     `-. `./ / |/_.'" << std::endl;
+    // outfile << "                     |    |//" << std::endl;
+    // outfile << "                     |_    /|" << std::endl;
+    // outfile << "                     |-   | |" << std::endl;
+    // outfile << "                     |   =| |" << std::endl;
+    // outfile << "                     |    | |" << std::endl;
+    // outfile << "--------------------/ ,  . \\--------._" << std::endl
+    outfile << "   &&& &&  & &&            &&& &&  & &&            &&& &&  & &&" << std::endl;
+    outfile << " && &\\/&\\|& ()|/ @,     && &\\/&\\|& ()|/ @,     && &\\/&\\|& ()|/ @," << std::endl;
+    outfile << " &\\/(/&/&||/& /_/)_&    &\\/(/&/&||/& /_/)_&    &\\/(/&/&||/& /_/)_&" << std::endl;
+    outfile << " &() &\\/&|()|/&\\/ '%\"   &() &\\/&|()|/&\\/ '%\"   &() &\\/&|()|/&\\/ '%\"" << std::endl;
+    outfile << " &_\\_&&_\\ |& |&&/&__%   &_\\_&&_\\ |& |&&/&__%   &_\\_&&_\\ |& |&&/&__%" << std::endl;
+    outfile << "&&   && & &| &| /& &%  &&   && & &| &| /& &%  &&   && & &| &| /& &%" << std::endl;
+    outfile << " ()&_---()&\\&\\|&&-&&--  ()&_---()&\\&\\|&&-&&--  ()&_---()&\\&\\|&&-&&--" << std::endl;
+    outfile << "        |||                   |||                   |||" << std::endl;
+    outfile << "        |||                   |||                   |||" << std::endl;
+    outfile << "        |||                   |||                   |||" << std::endl;
+    outfile << "        |||                   |||                   |||" << std::endl;
+    outfile << "   _____|||_____         _____|||_____         _____|||_____" << std::endl;
+    outfile << std::endl;
     outfile.close();
 }

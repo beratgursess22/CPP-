@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:42:05 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 23:06:31 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:17:08 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ class Form
                 virtual const char* what() const throw();
         };
         class GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class AlreadySignedException : public std::exception
         {
             public:
                 virtual const char* what() const throw();

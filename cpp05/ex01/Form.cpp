@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:58:48 by igurses           #+#    #+#             */
-/*   Updated: 2026/01/19 23:06:33 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/07 18:17:21 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int Form::getGradeToExecute() const
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
+    if (this->isSigned)
+        throw Form::AlreadySignedException();
     if (bureaucrat.getGrade() > this->gradeToSign)
         throw Form::GradeTooLowException();
     this->isSigned = true;
@@ -79,6 +81,10 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
     return "Form Exception: Grade is too low.";
+}
+const char* Form::AlreadySignedException::what() const throw()
+{
+    return "Form Exception: Form is already signed.";
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &form)
