@@ -14,6 +14,5 @@ int main ()
 		std::cout << "Deserialized data: name = " << deserializedData->name << ", age = " << deserializedData->age << std::endl;
 	else
 		std::cout << "Deserialization failed" << std::endl;
-
 	return 0;
 }

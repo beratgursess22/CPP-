@@ -6,13 +6,7 @@
 #include <iostream>
 #include <string>
 #include <cstdint>
-
-
-struct Data
-{
-	std::string name;
-	int age;
-};
+#include "Data.hpp"
 
 class Serializer
 {
