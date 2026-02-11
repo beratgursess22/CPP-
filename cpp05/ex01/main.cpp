@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 17:14:55 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/07 18:18:12 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 13:41:16 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ int main()
     std::cout << "=== Test 1: Successful signing ==="  << std::endl;
     try {
         Form formA("Tax Form", 50, 30);
-        Bureaucrat alice("Alice", 40);
+        Bureaucrat alice("İbrahim", 40);
         std::cout << alice;
         std::cout << formA;
+        alice.signForm(formA);
         alice.signForm(formA);
         std::cout << formA;
     }
@@ -32,7 +33,7 @@ int main()
     std::cout << "\n=== Test 2: Failed signing (grade too low) ===" << std::endl;
     try {
         Form formB("Important Document", 25, 10);
-        Bureaucrat bob("Bob", 50);
+        Bureaucrat bob("Berat", 50);
         std::cout << bob;
         std::cout << formB;
         bob.signForm(formB);
@@ -53,7 +54,7 @@ int main()
     std::cout << "\n=== Test 4: Multiple signings ===" << std::endl;
     try {
         Form formC("Contract", 100, 50);
-        Bureaucrat charlie("Charlie", 90);
+        Bureaucrat charlie("Gurses", 90);
         std::cout << formC;
         charlie.signForm(formC);
         std::cout << formC;

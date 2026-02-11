@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 13:20:51 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/07 19:33:19 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 13:48:34 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int main()
     delete form2;
     delete form3;
     if (form4)
+    {
+        std::cout<< "Form4 created successfully." << std::endl;
         delete form4;    
+    } 
 
     return 0;
 }
