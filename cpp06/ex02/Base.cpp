@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 17:06:03 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/11 17:10:13 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 17:20:56 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
 
 Base::~Base() {}
 
