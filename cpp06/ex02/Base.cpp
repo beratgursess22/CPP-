@@ -1,8 +1,14 @@
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/11 17:06:03 by igurses           #+#    #+#             */
+/*   Updated: 2026/02/11 17:10:13 by igurses          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Base.hpp"
 #include "A.hpp"
@@ -11,6 +17,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+
 
 Base::~Base() {}
 
@@ -43,23 +50,17 @@ void identify(Base& p)
 		(void)dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
 	}
-	catch (std::bad_cast &e)
-	{
-	}
+	catch (...){}
 	try
 	{
 		(void)dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
 	}
-	catch (std::bad_cast &e)
-	{
-	}
+	catch (...){}
 	try
 	{
 		(void)dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
 	}
-	catch (std::bad_cast &e)
-	{
-	}
+	catch (...){}
 }

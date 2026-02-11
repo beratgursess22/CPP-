@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/11 16:41:31 by igurses           #+#    #+#             */
+/*   Updated: 2026/02/11 16:48:29 by igurses          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 
 #ifndef SERIALIZER_HPP
@@ -5,7 +17,7 @@
 
 #include <iostream>
 #include <string>
-#include <cstdint>
+#include <stdint.h>  
 #include "Data.hpp"
 
 class Serializer

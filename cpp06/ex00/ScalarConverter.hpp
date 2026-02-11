@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:50:54 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/07 20:34:01 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 16:00:05 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@
 class ScalarConverter
 {
     private:
-        ScalarConverter(); // çünkü bu sınıfın nesnesi oluşturulmayacak, sadece static fonksiyonları kullanılacak
+        ScalarConverter();
         ScalarConverter(const ScalarConverter& other);
         ScalarConverter& operator=(const ScalarConverter& other);
         ~ScalarConverter();     
     public:
-        static void convert(const std::string& literal);   // static fonksiyon, nesne oluşturmadan çağrılabilir
- };
- 
+        static void convert(const std::string& literal);
+};  
 #endif 

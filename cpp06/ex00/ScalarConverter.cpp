@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:52:58 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/07 20:34:31 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 16:39:25 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,16 +143,16 @@ void ScalarConverter::convert(const std::string& literal)
         value = static_cast<double>(literal[1]);
         break;
     case 1:
-    {
-        char* endptr;
-        long tmp = std::strtol(literal.c_str(), &endptr, 10);
-        if (*endptr != '\0' || errno == ERANGE)
         {
-            std::cout << "Error: invalid literal" << std::endl;
-            return;
-        }
-        value = static_cast<double>(tmp);
-    }
+            char* endptr;
+            long tmp = std::strtol(literal.c_str(), &endptr, 10);
+            if (*endptr != '\0' || errno == ERANGE)
+            {
+                std::cout << "Error: invalid literal" << std::endl;
+                return;
+            }
+            value = static_cast<double>(tmp);
+            }
         break;
     case 2:
         {
@@ -166,15 +166,15 @@ void ScalarConverter::convert(const std::string& literal)
         }
         break;
     case 3:
-    {
-        char* endptr;
-        value = std::strtod(literal.c_str(), &endptr);
-        if (endptr == literal.c_str())
         {
-            std::cout << "Error: invalid literal" << std::endl;
-            return;
+            char* endptr;
+            value = std::strtod(literal.c_str(), &endptr);
+            if (endptr == literal.c_str())
+            {
+                std::cout << "Error: invalid literal" << std::endl;
+                return;
+            }
         }
-    }
         break;
     default:
         std::cout << "Error: invalid literal" << std::endl;
