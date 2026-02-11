@@ -6,22 +6,15 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 17:20:08 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/11 17:20:31 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 17:33:19 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
 
 #include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-
-Base* generate(void);
-void identify(Base* p);
-void identify(Base& p);
 
 int main()
 {
@@ -44,12 +37,13 @@ int main()
     if (aPtr)
         std::cout << "dynamic_cast<A*>(obj) SUCCESS -> obj is A" << std::endl;
     else
-        std::cout << "dynamic_cast<A*>(obj) FAILED -> obj is NOT A (NULL)" << std::endl;
-
+        std::cout << "dynamic_cast<A*>(obj) FAILED -> obj is (NULL)" << std::endl;
+    std::cout<<"aPtr: "<<aPtr<<std::endl;
     std::cout << "\n[2] dynamic_cast<A&>(*obj)" << std::endl;
     try
     {
         A& aRef = dynamic_cast<A&>(*obj);
+        std::cout<<"aRef: "<<&aRef<<std::endl;
         (void)aRef;
         std::cout << "dynamic_cast<A&>(*obj) SUCCESS -> obj is A" << std::endl;
     }

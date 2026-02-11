@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 17:06:03 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/11 17:20:56 by igurses          ###   ########.fr       */
+/*   Updated: 2026/02/11 17:33:26 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
 
 Base::~Base() {}
 
