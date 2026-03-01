@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:46:11 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/16 15:55:44 by igurses          ###   ########.fr       */
+/*   Updated: 2026/03/01 16:23:38 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <iostream>
 #include <list>
 
-template <typename T> class MutantStack : public std::stack<T>
+template <typename T> 
+class MutantStack : public std::stack<T>
 {
 	public:
 	MutantStack()

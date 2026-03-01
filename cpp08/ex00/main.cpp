@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:27:35 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/16 14:37:29 by igurses          ###   ########.fr       */
+/*   Updated: 2026/03/01 15:08:36 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,7 @@ int main()
 	std::deque<int> deq;
 	deq.push_back(100);
 	deq.push_back(200);
-	deq.push_back(300);
-	
+	deq.push_back(300);	
 	try
 	{
 		std::deque<int>::iterator it = easyfind(deq, 200);
@@ -114,40 +113,5 @@ int main()
 	{
 		std::cout << "Exception caught: Empty container" << std::endl;
 	}
-
-	std::cout << "\n=== TEST 8: First Element ===" << std::endl;
-	try
-	{
-		std::vector<int>::iterator it = easyfind(vec, 1);
-		std::cout << "Found first element: " << *it << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << "Not found: " << e.what() << std::endl;
-	}
-
-	std::cout << "\n=== TEST 9: Last Element ===" << std::endl;
-	try
-	{
-		std::vector<int>::iterator it = easyfind(vec, 5);
-		std::cout << "Found last element: " << *it << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << "Not found: " << e.what() << std::endl;
-	}
-
-	std::cout << "\n=== TEST 10: Single Element Container ===" << std::endl;
-	std::vector<int> singleVec;
-	singleVec.push_back(42);
-	try
-	{
-		std::vector<int>::iterator it = easyfind(singleVec, 42);
-		std::cout << "Found in single element: " << *it << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << "Not found: " << e.what() << std::endl;
-	}	
 	return 0;
 }

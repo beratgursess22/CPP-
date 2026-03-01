@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:56:32 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/16 16:10:00 by igurses          ###   ########.fr       */
+/*   Updated: 2026/03/01 17:24:27 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,9 @@ int main()
         
         MutantStack<int>::iterator it = mstack.begin();
         MutantStack<int>::iterator ite = mstack.end();
-        
-
-		std::cout<< "it :" << *it << std::endl;
-		std::cout<< "ite :" << *ite << std::endl;
         ++it;
-		std::cout<< "it after increment and decrement :" << *it << std::endl;
         --it;
-        std::cout << "it after decrement :" << *it << std::endl;
-		
-        std::cout << "Stack contents:" << std::endl;
+        		
         while (it != ite)
         {
             std::cout << *it << std::endl;
@@ -52,9 +45,35 @@ int main()
         }
         
         std::stack<int> s(mstack);
-        std::cout << "Converted to std::stack size: " << s.size() << std::endl;
     }
     
+    std::cout << std::endl << ". TEST 1B: Subject Example (std::list) ." << std::endl;
+    { 
+        std::list<int> lst;
+
+        lst.push_back(5);
+        lst.push_back(17);
+
+        std::cout << "Top: " << lst.back() << std::endl;
+
+        lst.pop_back();
+
+        std::cout << "Size: " << lst.size() << std::endl;
+
+        lst.push_back(3);
+        lst.push_back(4);
+        lst.push_back(737);
+        lst.push_back(0);
+
+        std::list<int>::iterator it = lst.begin();
+        std::list<int>::iterator ite = lst.end();
+
+        while (it != ite)
+        {
+            std::cout << *it << std::endl;
+            ++it;
+        }
+    }
     
     
     std::cout <<std::endl <<". TEST 2: String MutantStack ." << std::endl;

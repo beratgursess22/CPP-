@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 00:15:01 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/16 00:24:14 by igurses          ###   ########.fr       */
+/*   Updated: 2026/03/01 13:06:56 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Array
 		Array& operator=(const Array &other);
 		~Array();
 		T& operator[](unsigned int index);
-		const T& operator[](unsigned int index) const;
 		unsigned int getSize() const;
 		class OutOfRangeException : public std::exception
 		{
@@ -76,14 +75,6 @@ Array<T>::~Array()
 
 template <typename T>
 T& Array<T>::operator[](unsigned int index)
-{
-	if (index >= size)
-		throw OutOfRangeException();
-	return arr[index];
-}
-
-template <typename T>
-const T& Array<T>::operator[](unsigned int index) const
 {
 	if (index >= size)
 		throw OutOfRangeException();
