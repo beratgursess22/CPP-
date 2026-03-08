@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:56:32 by igurses           #+#    #+#             */
-/*   Updated: 2026/03/01 17:24:27 by igurses          ###   ########.fr       */
+/*   Updated: 2026/03/08 14:04:27 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int main()
 
         lst.push_back(5);
         lst.push_back(17);
+        
 
         std::cout << "Top: " << lst.back() << std::endl;
 

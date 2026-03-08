@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:18:15 by igurses           #+#    #+#             */
-/*   Updated: 2026/03/01 16:11:39 by igurses          ###   ########.fr       */
+/*   Updated: 2026/03/08 13:56:13 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <stdexcept>
 #include <limits>
+#include <list>
 
 class Span
 {
