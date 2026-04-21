@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:48:42 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/22 15:16:02 by igurses          ###   ########.fr       */
+/*   Updated: 2026/04/21 23:24:41 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,10 @@ bool BitcoinExchange::parseLine(const std::string& line, std::string& date, std:
 		return false;
 	date = trim(line.substr(0, pipePos));
 	valueStr = trim(line.substr(pipePos + 1));
-	
-	return !date.empty() && !valueStr.empty();
+	if (date.empty() || valueStr.empty())
+		return false;
+
+	return true;
 }
 
 bool BitcoinExchange::parseValue(const std::string& valueStr, double& value) const
