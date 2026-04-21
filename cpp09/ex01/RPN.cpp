@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 15:31:14 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/22 15:44:52 by igurses          ###   ########.fr       */
+/*   Updated: 2026/04/21 23:44:15 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ bool RPN::isOperator(const std::string& token) const
 	
 bool RPN::isNumber(const std::string& token) const
 {
-	return token.length() == 1 && std::isdigit(token[0]);
+	if (token.length() != 1)
+		return false;
+	if (!std::isdigit(token[0]))
+		return false;
+	return true;
 }
 
 int RPN::applyOperator(const std::string& op, int a, int b) const
@@ -74,8 +78,10 @@ int RPN::calcuation(const std::string &expression)
 		{
 			if (_stack.size() < 2)
 				throw std::runtime_error("Error: not enough operands");
-			int b = _stack.top(); _stack.pop();
-			int a = _stack.top(); _stack.pop();
+			int b = _stack.top(); 
+			_stack.pop();
+			int a = _stack.top(); 
+			_stack.pop();
 			int result = applyOperator(token, a, b);
 			_stack.push(result);
 		}
