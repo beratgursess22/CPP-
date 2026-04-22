@@ -8,6 +8,7 @@
 # include <sstream>
 # include <stdexcept>
 # include <vector>
+#include <iostream>
 
 class PmergeMe
 {
