@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:05:15 by igurses           #+#    #+#             */
-/*   Updated: 2026/04/22 16:44:51 by igurses          ###   ########.fr       */
+/*   Updated: 2026/04/22 17:10:43 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,11 +212,6 @@ void PmergeMe::fordJohnsonDeque(std::deque<int> &data)
 		oddValue = data[data.size() - 1];
 	fordJohnsonDeque(bigger);
 	std::deque<int> mainChain = bigger;
-	for (size_t i = 0; i < mainChain.size(); i++)
-	{
-		std::cout << mainChain[i] << " ";
-	}
-	std::cout << std::endl;
 	if (!smaller.empty())
 	{
 		mainChain.insert(std::lower_bound(mainChain.begin(), mainChain.end(),
