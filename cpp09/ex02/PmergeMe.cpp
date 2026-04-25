@@ -166,13 +166,9 @@ void PmergeMe::fordJohnsonVector(std::vector<int> &data)
 	{
 		merged.insert(std::lower_bound(merged.begin(), merged.end(),
 				smaller[0]), smaller[0]);
-		std::vector<std::size_t> order = buildInsertionOrder(smaller.size());
-		for (std::size_t i = 0; i < order.size(); ++i)
-		{
-			std::size_t idx = order[i];
+		for (std::size_t i = 1; i < smaller.size(); ++i)
 			merged.insert(std::lower_bound(merged.begin(), merged.end(),
-					smaller[idx]), smaller[idx]);
-		}
+					smaller[i]), smaller[i]);
 	}
 	if (hasOdd)
 		merged.insert(std::lower_bound(merged.begin(), merged.end(), oddValue),
@@ -216,68 +212,12 @@ void PmergeMe::fordJohnsonDeque(std::deque<int> &data)
 	{
 		mainChain.insert(std::lower_bound(mainChain.begin(), mainChain.end(),
 				smaller[0]), smaller[0]);
-		std::deque<std::size_t> order = buildInsertionOrderDeque(smaller.size());
-		for (std::size_t i = 0; i < order.size(); ++i)
-		{
-			std::size_t idx = order[i];
+		for (std::size_t i = 1; i < smaller.size(); ++i)
 			mainChain.insert(std::lower_bound(mainChain.begin(),
-					mainChain.end(), smaller[idx]), smaller[idx]);
-		}
+					mainChain.end(), smaller[i]), smaller[i]);
 	}
 	if (hasOdd)
 		mainChain.insert(std::lower_bound(mainChain.begin(), mainChain.end(),
 				oddValue), oddValue);
 	data.swap(mainChain);
-}
-
-std::vector<std::size_t> PmergeMe::buildInsertionOrder(std::size_t count)
-{
-	std::vector<std::size_t> order;
-	if (count <= 1)
-		return (order);
-	std::size_t prev = 1;
-	std::size_t j0 = 1;
-	std::size_t j1 = 3;
-	while (prev < count)
-	{
-		std::size_t upper;
-		if (j1 < count)
-			upper = j1;
-		else
-			upper = count;
-		for (std::size_t k = upper; k > prev; --k)
-			order.push_back(k - 1);
-		prev = upper;
-		std::size_t next = j1 + (2 * j0);
-		j0 = j1;
-		j1 = next;
-	}
-	return (order);
-}
-
-std::deque<std::size_t> PmergeMe::buildInsertionOrderDeque(std::size_t count)
-{
-	std::deque<std::size_t> order;
-	if (count <= 1)
-		return (order);
-
-	std::size_t prev = 1;
-	std::size_t j0 = 1;
-	std::size_t j1 = 3;
-
-	while (prev < count)
-	{
-		std::size_t upper;
-		if (j1 < count)
-			upper = j1;
-		else
-			upper = count;
-		for (std::size_t k = upper; k > prev; --k)
-			order.push_back(k - 1);
-		prev = upper;
-		std::size_t next = j1 + (2 * j0);
-		j0 = j1;
-		j1 = next;
-	}
-	return (order);
 }
