@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:05:15 by igurses           #+#    #+#             */
-/*   Updated: 2026/04/22 17:10:43 by igurses          ###   ########.fr       */
+/*   Updated: 2026/04/29 00:35:51 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void PmergeMe::parseInput(char **argv)
 		deq.push_back(number);
 	}
 	if (vec.empty() || deq.empty())
-		throw std::runtime_error("Error: No valid input provided.");
+		throw std::runtime_error("Error");
 }
 
 bool PmergeMe::isPositiveInteger(const std::string &s)
@@ -143,8 +143,10 @@ void PmergeMe::fordJohnsonVector(std::vector<int> &data)
 		return ;
 	std::vector<int> smaller;
 	std::vector<int> bigger;
+	std::vector<int> partnerUpper;
 	smaller.reserve(data.size() / 2);
 	bigger.reserve((data.size() + 1) / 2);
+	partnerUpper.reserve(data.size() / 2);
 	hasOdd = (data.size() % 2) != 0;
 	oddValue = 0;
 	for (std::size_t i = 0; i + 1 < data.size(); i += 2)
@@ -155,24 +157,34 @@ void PmergeMe::fordJohnsonVector(std::vector<int> &data)
 		{
 			smaller.push_back(a);
 			bigger.push_back(b);
+			partnerUpper.push_back(b);
 		}
 		else
 		{
 			smaller.push_back(b);
 			bigger.push_back(a);
+			partnerUpper.push_back(a);
 		}
 	}
 	if (hasOdd)
 		oddValue = data.back();
 	fordJohnsonVector(bigger);
 	std::vector<int> merged = bigger;
-	if (!smaller.empty())
+	if (!smaller.empty() && !partnerUpper.empty())
 	{
-		merged.insert(std::lower_bound(merged.begin(), merged.end(),
-				smaller[0]), smaller[0]);
-		for (std::size_t i = 1; i < smaller.size(); ++i)
-			merged.insert(std::lower_bound(merged.begin(), merged.end(),
-					smaller[i]), smaller[i]);
+		std::vector<std::size_t> order = buildJacobsthalOrder(smaller.size());
+		for (std::size_t k = 0; k < order.size(); ++k)
+		{
+			std::size_t idx = order[k] - 1;
+			int value = smaller[idx];
+			int upperValue = partnerUpper[idx];
+			std::vector<int>::iterator upperIt = std::find(merged.begin(), merged.end(), upperValue);
+			if (upperIt != merged.end())
+				++upperIt;
+			else
+				upperIt = merged.end();
+			merged.insert(std::lower_bound(merged.begin(), upperIt, value), value);
+		}
 	}
 	if (hasOdd)
 		merged.insert(std::lower_bound(merged.begin(), merged.end(), oddValue),
@@ -191,6 +203,7 @@ void PmergeMe::fordJohnsonDeque(std::deque<int> &data)
 		return ;
 	std::deque<int> smaller;
 	std::deque<int> bigger;
+	std::deque<int> partnerUpper;
 	hasOdd = (data.size() % 2 != 0);
 	oddValue = 0;
 	for (std::size_t i = 0; i + 1 < data.size(); i += 2)
@@ -201,27 +214,61 @@ void PmergeMe::fordJohnsonDeque(std::deque<int> &data)
 		{
 			smaller.push_back(a);
 			bigger.push_back(b);
+			partnerUpper.push_back(b);
 		}
 		else
 		{
 			smaller.push_back(b);
 			bigger.push_back(a);
+			partnerUpper.push_back(a);
 		}
 	}
 	if (hasOdd)
 		oddValue = data[data.size() - 1];
 	fordJohnsonDeque(bigger);
 	std::deque<int> mainChain = bigger;
-	if (!smaller.empty())
+	if (!smaller.empty() && !partnerUpper.empty())
 	{
-		mainChain.insert(std::lower_bound(mainChain.begin(), mainChain.end(),
-				smaller[0]), smaller[0]);
-		for (std::size_t i = 1; i < smaller.size(); ++i)
-			mainChain.insert(std::lower_bound(mainChain.begin(),
-					mainChain.end(), smaller[i]), smaller[i]);
+		std::vector<std::size_t> order = buildJacobsthalOrder(smaller.size());
+		for (std::size_t k = 0; k < order.size(); ++k)
+		{
+			std::size_t idx = order[k] - 1;
+			int value = smaller[idx];
+			int upperValue = partnerUpper[idx];
+			std::deque<int>::iterator upperIt = std::find(mainChain.begin(), mainChain.end(), upperValue);
+			if (upperIt != mainChain.end())
+				++upperIt;
+			else
+				upperIt = mainChain.end();
+			mainChain.insert(std::lower_bound(mainChain.begin(), upperIt, value), value);
+		}
 	}
 	if (hasOdd)
 		mainChain.insert(std::lower_bound(mainChain.begin(), mainChain.end(),
 				oddValue), oddValue);
 	data.swap(mainChain);
+}
+
+std::vector<std::size_t> PmergeMe::buildJacobsthalOrder(std::size_t pendSize)
+{
+	std::vector<std::size_t> order;
+	if (pendSize == 0)
+		return order;
+	order.push_back(1);
+	std::size_t prevInserted = 1;
+	std::size_t jPrev = 1;
+	std::size_t jCurr = 3;
+	while (prevInserted < pendSize)
+	{
+		std::size_t upper = jCurr;
+		if (upper > pendSize)
+			upper = pendSize;
+		for (std::size_t idx = upper; idx > prevInserted; --idx)
+			order.push_back(idx);
+		prevInserted = upper;
+		std::size_t next = jCurr + (2 * jPrev);
+		jPrev = jCurr;
+		jCurr = next;
+	}
+	return order;
 }

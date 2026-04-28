@@ -26,6 +26,7 @@ class PmergeMe
 	void parseInput(char** av);
 	void fordJohnsonVector(std::vector<int>& data);
 	void fordJohnsonDeque(std::deque<int>& data);
+	static std::vector<std::size_t> buildJacobsthalOrder(std::size_t pendSize);
 	static void printBefore(const std::vector<int>& data);
 	static void printAfter(const std::vector<int>& data);
 	static double elapsedUs(std::clock_t start, std::clock_t end);
