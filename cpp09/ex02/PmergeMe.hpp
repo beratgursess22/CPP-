@@ -11,6 +11,7 @@
 # include <sstream>
 # include <stdexcept>
 # include <string>
+# include <set>
 # include <vector>
 #include <iomanip>
 

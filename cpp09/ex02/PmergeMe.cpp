@@ -42,6 +42,7 @@ PmergeMe::~PmergeMe()
 void PmergeMe::parseInput(char **argv)
 {
 	int	number;
+	std::set<int> seen;
 
 	for (int i = 0; argv[i] != NULL; i++)
 	{
@@ -49,6 +50,9 @@ void PmergeMe::parseInput(char **argv)
 		if (!isPositiveInteger(arg))
 			throw std::runtime_error("Error");
 		number = std::atoi(arg.c_str());
+		if (seen.find(number) != seen.end())
+			throw std::runtime_error("Error");
+		seen.insert(number);
 		vec.push_back(number);
 		deq.push_back(number);
 	}
