@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 15:28:57 by igurses           #+#    #+#             */
-/*   Updated: 2026/02/22 15:31:08 by igurses          ###   ########.fr       */
+/*   Updated: 2026/04/29 14:56:48 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <cstdlib>
 
 class RPN
 {

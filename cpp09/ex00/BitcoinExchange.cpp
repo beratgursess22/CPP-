@@ -6,7 +6,7 @@
 /*   By: igurses <igurses@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:48:42 by igurses           #+#    #+#             */
-/*   Updated: 2026/04/21 23:24:41 by igurses          ###   ########.fr       */
+/*   Updated: 2026/04/29 14:38:10 by igurses          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ BitcoinExchange::~BitcoinExchange() {}
 
 void BitcoinExchange::loadExchangeRates(const std::string& filename) 
 {
-	std::ifstream file(filename);
+	std::ifstream file(filename.c_str());
 	if (!file.is_open()) 
 	{
-		std::cerr << "Error: Could not open file " << filename << std::endl;
+		std::cout << "Error: Could not open file " << filename << std::endl;
 		return;
 	}
 
@@ -150,39 +150,39 @@ void BitcoinExchange::processInputLine(const std::string& line) const
 	
 	if (!parseLine(line, date, valueStr))
 	{
-		std::cerr << "Error: bad input => " << line << std::endl;
+		std::cout << "Error: bad input For ParseLine => " << line << std::endl;
 		return;
 	}
 	
 	if (!isValidDate(date))
 	{
-		std::cerr << "Error: bad input => " << line << std::endl;
+		std::cout << "Error: bad input For Data => " << line << std::endl;
 		return;
 	}
 	
 	double value;
 	if (!parseValue(valueStr, value))
 	{
-		std::cerr << "Error: bad input => " << line << std::endl;
+		std::cout << "Error: bad input For ParseValue => " << line << std::endl;
 		return;
 	}
 	
 	if (value < 0)
 	{
-		std::cerr << "Error: not a positive number." << std::endl;
+		std::cout << "Error: not a positive number." << std::endl;
 		return;
 	}
 	
 	if (value > 1000)
 	{
-		std::cerr << "Error: too large a number." << std::endl;
+		std::cout << "Error: too large a number." << std::endl;
 		return;
 	}
 	
 	double rate = getExchangeRate(date);
 	if (rate < 0)
 	{
-		std::cerr << "Error: no exchange rate available for date => " << date << std::endl;
+		std::cout << "Error: no exchange rate available for date => " << date << std::endl;
 		return;
 	}
 	
